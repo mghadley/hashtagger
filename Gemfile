@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise', '~> 4.4.3'
 gem 'pundit', '~> 1.1.0'
+gem 'slim-rails', '~> 3.1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
