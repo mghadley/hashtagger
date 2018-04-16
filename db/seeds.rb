@@ -1,5 +1,5 @@
 User.create!([
-  {email: "matt@test.com", encrypted_password: "$2a$11$RRb3m1NXv9gZ4Xj6NCFWAODJtS8mEKfzy7IApPrFlFxPtMei5IYcq", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-16 01:32:55", last_sign_in_at: "2018-04-15 17:51:44", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
+  {email: "matt@test.com", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-16 01:32:55", last_sign_in_at: "2018-04-15 17:51:44", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
 ])
 Category.create!([
   {name: "Rainbow Trout"},
