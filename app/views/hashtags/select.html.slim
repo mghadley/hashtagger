@@ -1,8 +1,15 @@
 .categories
-  - @categories.each do |category|
-    p = "#{category.name} #{category.hashtags.uniq.count}"
+  = form_tag(show_block_path, method: :get)
+    = token_tag
+    - @categories.each do |category|
+      .row
+        .col-sm-6
+          = check_box_tag "categories[#{category.name}]"
+          = label_tag "#{category.name} #{category.hashtags.uniq.count}"
+    = submit_tag "Submit"
 
 = form_tag(hashtags_path)
+  = token_tag
   = label_tag "Hashtag"
   = text_field_tag "hashtag[name]"
 

@@ -10,9 +10,12 @@ class HashtagsController < ApplicationController
   end
 
   def build_block
+    
+    redirect_to select_hashtags_path
   end
 
   def show_block
+    @selection = Hashtag.select_block(current_user, params[:categories].keys)
   end
 
   def new
