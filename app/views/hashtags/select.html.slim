@@ -1,19 +1,26 @@
 .categories
+  h2 Select the categories you would like to pull hastags from
   = form_tag(show_block_path, method: :get)
     = token_tag
-    - @categories.each do |category|
+    .form-check
       .row
-        .col-sm-6
-          = check_box_tag "categories[#{category.name}]"
-          = label_tag "#{category.name} #{category.hashtags.uniq.count}"
-    = submit_tag "Submit"
+        - @categories.each do |category|
+          .col-6
+            = check_box_tag "categories[#{category.name}]", 1, false, class: 'form-check-input'
+            = label_tag "categories[#{category.name}]", "#{category.name} #{category.hashtags.uniq.count}", class: 'form-check-label'
+        .col-12
+          = submit_tag "Submit", class: "btn btn-primary"
 
-= form_tag(hashtags_path)
-  = token_tag
-  = label_tag "Hashtag"
-  = text_field_tag "hashtag[name]"
+.new-hashtag
+  h3 Add new hashtags
+  = form_tag(hashtags_path)
+    = token_tag
+    .form-group
+      = label_tag "Hashtag"
+      = text_field_tag "hashtag[name]", nil, class: 'form-control'
 
-  = label_tag "Category"
-  = text_field_tag "category[name]"
-  
-  = submit_tag "Submit"
+    .form-group
+      = label_tag "Category"
+      = text_field_tag "category[name]", nil, class: 'form-control'
+    
+    = submit_tag "Submit", class: "btn btn-primary"

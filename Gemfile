@@ -38,6 +38,7 @@ gem 'pundit', '~> 1.1.0'
 gem 'slim-rails', '~> 3.1.3'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails', '~> 4.3.1'
+gem 'seed_dump'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
