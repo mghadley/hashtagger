@@ -115,7 +115,6 @@ Hashtag.create!([
   {name: "onthefly", category: nil},
   {name: "meateater", category: nil},
   {name: "ontheswing", category: nil},
-  {name: "", category: nil}
 ])
 UserHashtagCategory.create!([
   {user_id: 1, hashtag_id: 1, category_id: 1},
