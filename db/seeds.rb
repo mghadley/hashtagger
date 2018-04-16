@@ -2,6 +2,7 @@ User.create!([
   {email: "matt@test.com", password: "password", password_confirmation: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2018-04-16 01:32:55", last_sign_in_at: "2018-04-15 17:51:44", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
 ])
 Category.create!([
+  {name: "Flyfishing"},
   {name: "Rainbow Trout"},
   {name: "Brown Trout"},
   {name: "Outdoors"},
@@ -16,7 +17,6 @@ Category.create!([
   {name: "Utah Fly Fishing"},
   {name: "Fish Flop Friday"},
   {name: "Gear Review"},
-  {name: "Flyfishing"},
   {name: "Dry Flies"},
   {name: "Fishing With Dogs"},
   {name: "Nymph Fishing"},
@@ -26,8 +26,7 @@ Category.create!([
   {name: "Night Fly Fishing"},
   {name: "Fly On The Mountain"},
   {name: "Simms"},
-  {name: "Streamer Fishing"},
-  {name: ""}
+  {name: "Streamer Fishing"}
 ])
 Hashtag.create!([
   {name: "flyfishing", category: nil},
