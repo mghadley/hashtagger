@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 function copyBlock() {
-  var $temp = $("<input>");
+  var $temp = $("<textarea>");
   $("body").append($temp);
   $temp.val($('.hashtag-block').text()).select();
   document.execCommand("copy");
