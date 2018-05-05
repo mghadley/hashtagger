@@ -18,3 +18,7 @@ function copySuccess() {
 $(document).on('turbolinks:load', function() {
   $('#copy-btn').click(copyBlock);
 })
+
+$(function() {
+  $('#myEditor').froalaEditor({toolbarInline: false})
+});

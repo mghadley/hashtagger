@@ -3,14 +3,13 @@
     h2 Select the categories you would like to pull hastags from
     = form_tag(show_block_path, method: :get)
       = token_tag
-      .form-check
-        .row
-          - @categories.each do |category|
-            .col-6
-              = check_box_tag "categories[#{category.name}]", 1, false, class: 'form-check-input'
-              = label_tag "categories[#{category.name}]", "#{category.name} #{category.hashtags.uniq.count}", class: 'form-check-label'
-          .col-12
-            = submit_tag "Submit", class: "btn btn-primary"
+      .row
+        - @categories.each do |category|
+          .col-6
+            = check_box_tag "categories[]", category.name, false, class: 'form-check-input'
+            = label_tag "categories[]", "#{category.name} #{category.hashtags.uniq.count}", class: 'form-check-label'
+        .col-12
+          = submit_tag "Submit", class: "btn btn-primary"
   - else
     h2 Add some hastags below to get started
 

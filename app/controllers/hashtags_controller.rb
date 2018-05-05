@@ -9,13 +9,8 @@ class HashtagsController < ApplicationController
     @categories = current_user.categories.includes(:hashtags).uniq
   end
 
-  def build_block
-    
-    redirect_to select_hashtags_path
-  end
-
   def show_block
-    @selection = Hashtag.select_block(current_user, params[:categories].keys)
+    @selection = Hashtag.select_block(current_user, params[:categories])
   end
 
   def new

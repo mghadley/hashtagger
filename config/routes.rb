@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     collection do
       get 'select'
       get 'show_block'
-      post 'build_block'
     end
   end
 
