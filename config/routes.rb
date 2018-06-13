@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :categories, only: [:index]
+
   get 'show_block', to: 'hashtags#show_block'
 
   devise_for :users
