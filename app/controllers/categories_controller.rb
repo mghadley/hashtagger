@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.includes(:hashtags).all
+    @categories = current_user.categories.includes(:hashtags).uniq
   end
 
   def remove_hashtag

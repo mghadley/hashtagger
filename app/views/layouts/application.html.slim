@@ -11,6 +11,9 @@ html
     nav.navbar.navbar-light.bg-light
       .container
         = link_to "Hash 'em and Tag 'em", root_path, class: "navbar-brand"
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            = link_to "Manage Hashtags", categories_path, class: "nav-link"
         ul.navbar-nav.ml-auto
           li.nav-item.active
             = link_to "Sign Out", destroy_user_session_path, class: "nav-link", method: :delete
