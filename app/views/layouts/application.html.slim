@@ -1,0 +1,18 @@
+html
+  head
+    title Hashtagger
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+  body
+    nav.navbar.navbar-light.bg-light
+      .container
+        = link_to "Hash 'em and Tag 'em", root_path, class: "navbar-brand"
+        ul.navbar-nav.ml-auto
+          li.nav-item.active
+            = link_to "Sign Out", destroy_user_session_path, class: "nav-link"
+    div.container
+      = yield
