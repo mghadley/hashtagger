@@ -6,6 +6,11 @@ Rails.application.routes.draw do
       get 'select'
       get 'show_block'
     end
+    scope 'category/:category_id' do
+      member do
+        delete 'remove_from_user'
+      end
+    end
   end
 
   resources :categories, only: [:index]

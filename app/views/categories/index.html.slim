@@ -1,13 +1,2 @@
-.row
-  - @categories.each do |category|
-    .col-sm-6
-      .category-block
-        h4 = category.name
-        br
-        - category.hashtags.each do |tag|
-          .row
-            .col-6
-              = tag.name
-            .col-6
-              = link_to 'Remove', '#'
-      hr
+#categories-view
+  = render partial: 'categories_view', locals: { categories: @categories }

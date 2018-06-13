@@ -6,7 +6,7 @@ class HashtagsController < ApplicationController
   end
 
   def select
-    @categories = current_user.categories.includes(:hashtags).uniq
+    @categories = current_user.categories.includes(:hashtags).alphabetical.uniq
   end
 
   def show_block
@@ -28,5 +28,19 @@ class HashtagsController < ApplicationController
   end
 
   def edit
+  end
+
+  def remove_from_user
+    user_hash_cat = UserHashtagCategory.find_by(
+                                                 user_id: current_user.id,
+                                                 hashtag_id: params[:id],
+                                                 category_id: params[:category_id]
+                                               )
+    user_hash_cat.destroy
+    respond_to do |format|
+      format.js {
+        @categories = current_user.categories.includes(:hashtags).alphabetical.uniq
+      }
+    end
   end
 end
