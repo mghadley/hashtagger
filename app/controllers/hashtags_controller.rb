@@ -11,6 +11,10 @@ class HashtagsController < ApplicationController
 
   def show_block
     @selection = Hashtag.select_block(current_user, params[:categories])
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   def new

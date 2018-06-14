@@ -6,28 +6,13 @@
       .row
         - @categories.each do |category|
           .col-6
-            = check_box_tag "categories[]", category.name, false, class: 'form-check-input'
-            = label_tag "categories[]", "#{category.name} #{category.hashtags.uniq.count}", class: 'form-check-label'
+            .form-check
+              = check_box_tag "categories[]", category.name, false, class: 'form-check-input', id: category.name
+              = label_tag "categories[]", "#{category.name} #{category.hashtags.uniq.count}", class: 'form-check-label', for: category.name
         .col-12
           = submit_tag "Submit", class: "btn btn-primary"
   - else
     h2 Add some hastags below to get started
 
-= link_to "Manage Hashtags", categories_path
+#hashtag-block
 
-.new-hashtag
-  h3 Add new hashtags
-  i Do not include the #
-  = form_tag(hashtags_path)
-    = token_tag
-    .row
-      .col-sm-6
-        .form-group
-          = label_tag "Hashtag"
-          = text_field_tag "hashtag[name]", nil, class: 'form-control'
-      .col-sm-6
-        .form-group
-          = label_tag "Category"
-          = text_field_tag "category[name]", nil, class: 'form-control'
-    
-    = submit_tag "Submit", class: "btn btn-primary"

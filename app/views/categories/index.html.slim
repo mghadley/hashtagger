@@ -1,2 +1,21 @@
+.new-hashtag
+  h3 Add new hashtags
+  i Do not include the #
+  = form_tag(hashtags_path)
+    = token_tag
+    .row
+      .col-sm-6
+        .form-group
+          = label_tag "Hashtag"
+          = text_field_tag "hashtag[name]", nil, class: 'form-control'
+      .col-sm-6
+        .form-group
+          = label_tag "Category"
+          = text_field_tag "category[name]", nil, class: 'form-control'
+    
+    = submit_tag "Submit", class: "btn btn-primary"
+
+hr
+
 #categories-view
   = render partial: 'categories_view', locals: { categories: @categories }
