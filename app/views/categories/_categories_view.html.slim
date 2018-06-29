@@ -11,5 +11,7 @@
             .col-6
               = tag.name
             .col-6
-              = link_to 'Remove', remove_from_user_hashtag_path(category, tag), method: :delete, remote: true
+              = link_to 'Edit', '#'
+              ||
+              = link_to 'Remove', remove_from_user_category_hashtag_path(category, tag), method: :delete, remote: true
       hr
