@@ -1,0 +1,7 @@
+- category = nil
+- @user_hash_cats.each do |uhc|
+  - unless category == uhc.category
+    - category = uhc.category
+    h3 = uhc.category.name
+  = uhc.hashtag.name
+  br

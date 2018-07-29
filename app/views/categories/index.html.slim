@@ -4,5 +4,4 @@
 
 hr
 
-#categories-view
-  = render partial: 'categories_view', locals: { categories: @categories }
+= react_component("Categories", { categories: @categories, csrf_token: form_authenticity_token})

@@ -15,11 +15,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories, only: [:index]
+  resources :categories, only: [:index] do
+    member do
+      get :category_hashtags
+    end
+  end
 
-  get '/user_hashtag_categories/edit/:category_id/:hashtag_id', to: 'user_hashtag_categories#update', as: 'edit_user_hashtag_category'
-  post '/user_hashtag_categories'
-  put '/user_hashtag_categories/:id', to: 'user_hashtag_categories#update', as: 'user_hashtag_category'
+  resources :user_hashtag_categories, only: [:index, :destroy, :update, :create]
 
   get 'show_block', to: 'hashtags#show_block'
 

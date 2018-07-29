@@ -38,6 +38,10 @@ gem 'pundit', '~> 1.1.0'
 gem 'slim-rails', '~> 3.1.3'
 gem 'bootstrap', '~> 4.1.0'
 gem 'jquery-rails', '~> 4.3.1'
+gem 'webpacker', '~> 3.2.0'
+gem 'react-rails', '~> 2.3.1'
+gem 'active_model_serializers', '~> 0.10.7'
+gem "font-awesome-rails", '~> 4.7.0.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
