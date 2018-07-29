@@ -1,0 +1,16 @@
+h3 Add new hashtags
+i Do not include the #
+= form_for(user_hash_cat) do |f|
+  .row
+    .col-sm-6
+      = f.fields_for :hashtag do |hashtag_fields|
+        .form-group
+          = hashtag_fields.label "Hashtag"
+          = hashtag_fields.text_field :name, class: 'form-control'
+    .col-sm-6
+      = f.fields_for :category do |category_fields|
+        .form-group
+          = category_fields.label "Category"
+          = category_fields.text_field :name, class: 'form-control'
+  
+  = submit_tag "Submit", class: "btn btn-primary"

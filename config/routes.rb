@@ -8,12 +8,20 @@ Rails.application.routes.draw do
     end
     scope 'category/:category_id' do
       member do
-        delete 'remove_from_user'
+        delete 'remove_from_user', as: 'remove_from_user_category'
+        get 'edit', as: 'edit_category'
+        put 'update', as: 'category'
       end
     end
   end
 
-  resources :categories, only: [:index]
+  resources :categories, only: [:index] do
+    member do
+      get :category_hashtags
+    end
+  end
+
+  resources :user_hashtag_categories, only: [:index, :destroy, :update, :create]
 
   get 'show_block', to: 'hashtags#show_block'
 

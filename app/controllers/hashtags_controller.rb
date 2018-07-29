@@ -1,4 +1,6 @@
 class HashtagsController < ApplicationController
+  before_action :find_hashtag, only: [:edit]
+
   def index
   end
 
@@ -32,6 +34,7 @@ class HashtagsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def remove_from_user
@@ -46,5 +49,15 @@ class HashtagsController < ApplicationController
         @categories = current_user.categories.includes(:hashtags).alphabetical.uniq
       }
     end
+  end
+
+  private
+
+  def find_category
+    @category = Category.find(params[:category_id])
+  end
+
+  def find_hashtag
+    @hashtag = Hashtag.find(params[:id])
   end
 end
