@@ -18,3 +18,13 @@
 .success-message {
   display: none;
 }
+
+.hashtag-card {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 6px;
+  margin: 4px;
+  .fa {
+    margin: 3px 5px;
+  }
+}

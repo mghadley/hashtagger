@@ -7,6 +7,7 @@ class UserHashCat extends React.Component {
     this.toggleEdit = this.toggleEdit.bind(this);
     this.inputChange = this.inputChange.bind(this);
     this.update = this.update.bind(this);
+    this.renderHashtag = this.renderHashtag.bind(this);
   }
 
   componentDidMount() {
@@ -26,20 +27,28 @@ class UserHashCat extends React.Component {
     this.props.updateName(this.props.userHashCat.id, this.state.name);
   }
 
-  render() {
+  renderHashtag() {
     if(this.state.editing) {
       return(
-        <div className='col-4'>
-          <form>
-            <input type='text' name='name' value={this.state.name} onChange={this.inputChange}/>
-            <i className='fa fa-paper-plane' onClick={this.update} />
-            <i className='fa fa-ban' onClick={this.toggleEdit} />
-          </form>
-        </div>
+        <form>
+          <div className="form-group">
+            <div className="row">
+              <div className="col-6">
+                <input className="form-control" type='text' name='name' value={this.state.name} onChange={this.inputChange}/>
+              </div>
+              <div className="col-6">
+                <div className='pull-right'>
+                  <i className='fa fa-paper-plane' onClick={this.update} />
+                  <i className='fa fa-ban' onClick={this.toggleEdit} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
       )
     } else {
       return(
-        <div className='col-4'>
+        <div>
           {this.props.userHashCat.hashtag.name}
           <div className='pull-right'>
             <i className='fa fa-trash' onClick={() => this.props.removeHashtag(this.props.userHashCat.id)} />
@@ -48,6 +57,16 @@ class UserHashCat extends React.Component {
         </div>
       )
     }
+  }
+
+  render() {
+    return(
+      <div className="col-lg-4 col-md-6">
+        <div className="hashtag-card">
+          {this.renderHashtag()}
+        </div>
+      </div>
+    )
   }
 }
 
