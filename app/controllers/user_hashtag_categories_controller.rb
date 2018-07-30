@@ -3,7 +3,7 @@ class UserHashtagCategoriesController < ApplicationController
   before_action :set_instance_by_id, only: [:update, :destroy]
 
   def index
-    @user_hash_cats = current_user.user_hashtag_categories.where(category_id: params[:category_id])
+    @user_hash_cats = current_user.user_hashtag_categories.joins(:hashtag).where(category_id: params[:category_id]).order('hashtags.name')
     respond_to do |format|
       format.json {
         render json: @user_hash_cats
@@ -24,7 +24,7 @@ class UserHashtagCategoriesController < ApplicationController
     if @user_hash_cat.save
       redirect_to categories_path
     else
-      binding.pry
+      
     end
   end
 
