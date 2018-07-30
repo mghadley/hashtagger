@@ -38,8 +38,8 @@ class UserHashCat extends React.Component {
               </div>
               <div className="col-6">
                 <div className='pull-right'>
-                  <i className='fa fa-paper-plane' onClick={this.update} />
-                  <i className='fa fa-ban' onClick={this.toggleEdit} />
+                  <i className='fa fa-paper-plane fa-2x' onClick={this.update} />
+                  <i className='fa fa-ban fa-2x' onClick={this.toggleEdit} />
                 </div>
               </div>
             </div>
@@ -49,10 +49,10 @@ class UserHashCat extends React.Component {
     } else {
       return(
         <div>
-          {this.props.userHashCat.hashtag.name}
+          <span>{this.props.userHashCat.hashtag.name}</span>
           <div className='pull-right'>
-            <i className='fa fa-trash' onClick={() => this.props.removeHashtag(this.props.userHashCat.id)} />
-            <i className='fa fa-edit' onClick={this.toggleEdit} />
+            <i className='fa fa-trash fa-2x' onClick={() => this.props.removeHashtag(this.props.userHashCat.id)} />
+            <i className='fa fa-edit fa-2x' onClick={this.toggleEdit} />
           </div>
         </div>
       )

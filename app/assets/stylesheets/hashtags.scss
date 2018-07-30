@@ -22,9 +22,17 @@
 .hashtag-card {
   border: 1px solid #ccc;
   border-radius: 3px;
-  padding: 6px;
   margin: 4px;
+  overflow: auto;
+  height: 55px;
+  span {
+    height: 53px;
+    line-height: 53px;
+    margin-left: 6px;
+    font-size: 20px;
+  }
   .fa {
-    margin: 3px 5px;
+    line-height: 53px;
+    margin: 0 6px;
   }
 }
