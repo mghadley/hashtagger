@@ -5,18 +5,18 @@ class Hashtag < ApplicationRecord
 
   def self.select_block(user, categories)
     hashtags_population = {}
-    categories.each do |category|
-      category_record = Category.find_by(name: category)
-      hashtags_population[category] = by_user_and_category(user, category_record).pluck(:name).shuffle
+    categories.each do |category_id|
+      category = Category.find(category_id)
+      hashtags_population[category] = by_user_and_category(user, category).pluck(:name).shuffle
     end
     max_length = hashtags_population.values.map { |v| v.length }.max
     selection = []
     max_length.times do |i|
       hashtags_population.each do |cat, hashtags|
-        next if hashtags.length <= i || selection.length >= 30
+        next if hashtags.length <= i || selection.length >= 29
         selection << "##{hashtags[i]}"
       end
-      break if selection.length >= 30
+      break if selection.length >= 29
     end
     return selection
   end

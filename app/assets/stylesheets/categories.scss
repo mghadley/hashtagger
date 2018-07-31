@@ -2,6 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$purple: #3B0030;
+$red: #F53A33;
+$orange: #FF9130;
+$light-orange: #FFB674;
+$yellow: #FEDD55;
+$blue-green: #128C87;
+
 .category-block {
   margin-top: 20px;
+}
+
+.btn-category {
+  margin: 2px;
+  font-size: 14px !important;
+  padding: 4 6 !important;
+}
+
+.btn-select {
+  background-color: white;
+  border: 2px solid $orange !important;
+}
+
+.btn-deselect {
+  background-color: white;
+  border: 2px solid $purple !important;
 }
