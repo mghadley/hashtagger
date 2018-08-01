@@ -3,6 +3,12 @@ class CategoriesController < ApplicationController
     # @categories = current_user.categories.includes(:hashtags).alphabetical.uniq
     @categories = current_user.categories.alphabetical.uniq
     @user_hash_cat = current_user.user_hashtag_categories.new
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @categories
+      }
+    end
   end
 
   def category_hashtags

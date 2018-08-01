@@ -1,18 +1,2 @@
-.categories
-  - if @categories.any?
-    h2 Select the categories you would like to pull hastags from
-    = form_tag(show_block_path, method: :get)
-      = token_tag
-      .row
-        - @categories.each do |category|
-          .col-6
-            .form-check
-              = check_box_tag "categories[]", category.name, false, class: 'form-check-input', id: category.name
-              = label_tag "categories[]", "#{category.name} #{category.hashtags.uniq.count}", class: 'form-check-label', for: category.name
-        .col-12
-          = submit_tag "Submit", class: "btn btn-primary"
-  - else
-    h2 Add some hastags below to get started
-
-#hashtag-block
+= react_component('Select')
 
