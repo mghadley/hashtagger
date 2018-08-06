@@ -22,6 +22,9 @@ $blue-green: #128C87;
 .btn-select {
   background-color: white;
   border: 2px solid $orange !important;
+  &:active {
+    background-color: $orange;
+  }
 }
 
 .btn-deselect {

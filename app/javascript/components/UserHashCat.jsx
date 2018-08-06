@@ -32,9 +32,9 @@ class UserHashCat extends React.Component {
       return(
         <form>
           <div className="form-group">
-            <div className="row">
+            <div className="row align-items-center">
               <div className="col-6">
-                <input className="form-control" type='text' name='name' value={this.state.name} onChange={this.inputChange}/>
+                <input autoFocus className="form-control hashtag-edit border-0 ml-2 p-0" type='text' name='name' value={this.state.name} onChange={this.inputChange}/>
               </div>
               <div className="col-6">
                 <div className='pull-right'>
@@ -48,11 +48,13 @@ class UserHashCat extends React.Component {
       )
     } else {
       return(
-        <div>
-          <span>{this.props.userHashCat.hashtag.name}</span>
-          <div className='pull-right'>
-            <i className='fa fa-trash fa-2x' onClick={() => this.props.removeHashtag(this.props.userHashCat.id)} />
-            <i className='fa fa-edit fa-2x' onClick={this.toggleEdit} />
+        <div className="row align-items-center">
+          <div className="col">
+            <span className="ml-2">{this.props.userHashCat.hashtag.name}</span>
+            <div className='pull-right'>
+              <i className='fa fa-trash fa-2x' onClick={() => this.props.removeHashtag(this.props.userHashCat.id)} />
+              <i className='fa fa-edit fa-2x' onClick={this.toggleEdit} />
+            </div>
           </div>
         </div>
       )

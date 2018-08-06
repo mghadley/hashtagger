@@ -36,3 +36,11 @@
     margin: 0 6px;
   }
 }
+
+.hashtag-edit {
+  font-size: 20px !important;
+  color: black !important;
+  &:focus {
+    box-shadow: none !important;
+  }
+}
